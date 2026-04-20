@@ -5,10 +5,10 @@ clc
 close all
 
 % Directory with subject data
-addpath(genpath('/home/stella/Documents/MATLAB/'));  % Add NIfTI toolbox
-outpath='/storage/ekaterina/Charmed/Results_R1_SANDI_FR_Final'; % Set outputpath% Set outputpath
+addpath(genpath('/certainpath/Documents/MATLAB/'));  % Add NIfTI toolbox
+outpath='/certainpath1/Charmed/Results_R1_SANDI_FR_Final'; % Set outputpath% Set outputpath
 
-initpath = '/media/nas_rete/GLOVE_STUDY/DDC/derivatives';
+initpath = '/certainpath2/derivatives';
 cd(initpath);
 folders = dir('pil*');
 N_subj = length(folders);  % Number of subjects
@@ -149,7 +149,7 @@ for i = 1 : N_subj
     plot(bval,SNR_arr_gm(:,i),'bo');
     grid on
     legend('CC','GM');
-    figpath = '/storage/ekaterina/Charmed/Results_R1_SANDI_FR_Final/';
+    figpath = '/certainpath/Charmed/Results_R1_SANDI_FR_Final/';
     saveas(h,strcat(figpath,'SNR_cc_gm_',folders(i).name),'fig');
     % from the plot, I can pinpoint the min SNR for each b-value
     % and check that it corresponds to the L-R direction.
@@ -178,7 +178,7 @@ hold on
 plot(bval,SNR_across_gm,'bo');
 grid on
 legend('CC','GM');
-figpath = '/storage/ekaterina/Charmed/Results_R1_SANDI_FR_Final/';
+figpath = '/certainpath/Charmed/Results_R1_SANDI_FR_Final/';
 saveas(h,strcat(figpath,'SNR_cc_gm_across_subjs'),'fig');
 
 cd(figpath);
@@ -302,7 +302,7 @@ set(gca,'FontSize',12,'FontWeight','Bold');
 
 cd(figpath);
 
-figpath = '/storage/ekaterina/Charmed/Results_R1_SANDI_FR_Final/';
+figpath = '/certainpath/Charmed/Results_R1_SANDI_FR_Final/';
 saveas(h,strcat(figpath,'SNR_cc_gm_across_Subjs_Dirs'),'fig');
 
 close all
